@@ -58,7 +58,7 @@ public class LogonDBBean {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("select passwd from member where id =?");
 			pstmt.setString(1, id);
-			pstmt.executeQuery();
+			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
 				dbpasswd =rs.getString("passwd");
